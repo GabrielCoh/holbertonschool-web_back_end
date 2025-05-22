@@ -4,6 +4,7 @@ from pymongo import MongoClient
 
 
 def log_stats():
+    """def log_stats function"""
     client = MongoClient('localhost', 27017)
     db = client.logs
     collection = db.nginx
@@ -21,7 +22,7 @@ def log_stats():
         method_qty = collection.count_documents({"method": method})
         print(f"\tmethod {method}: {method_qty}")
     print(f"{status_check} status check")
-
+    """print"""
 
 if __name__ == "__main__":
     log_stats()
